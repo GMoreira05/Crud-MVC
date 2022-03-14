@@ -5,7 +5,7 @@
         private $conexao;
 
         function __construct(){
-            $dns = "mysql:host=localhost;dbname=db_sistema";
+            $dns = "mysql:host=localhost:3307;dbname=db_sistema";
             $user = "root";
             $pass = "etecjau";
 
