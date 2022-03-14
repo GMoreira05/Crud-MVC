@@ -17,6 +17,10 @@
             $pessoa->email = $_POST['email'];
             $pessoa->telefone = $_POST['telefone'];
             $pessoa->endereco = $_POST['endereco'];
+
+            $pessoa->save();
+
+            echo "piroca";
         }
 
         public static function form(){

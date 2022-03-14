@@ -20,22 +20,22 @@
             <input type="text" name="nome" id="nome" /> <br>
 
             <label for="rg">RG:</label>
-            <input type="text" name="rg" id="rg"> <br>
+            <input type="text" name="rg" id="rg" name="rg"> <br>
 
             <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" id="cpf"> <br>
+            <input type="text" name="cpf" id="cpf" name="cpf"> <br>
 
             <label for="data_nascimento">Data de Nascimento:</label>
-            <input type="date" name="data_nascimento" id="data_nascimento"> <br>
+            <input type="date" name="data_nascimento" id="data_nascimento" name="data_nascimento"> <br>
 
             <label for="email">E-Mail:</label>
-            <input type="text" name="email" id="email"> <br>
+            <input type="text" name="email" id="email" name="email"> <br>
 
             <label for="telefone">Telefone:</label>
-            <input type="text" name="telefone" id="telefone"> <br>
+            <input type="text" name="telefone" id="telefone" name="telefone"> <br>
 
             <label for="endereco">Endereço:</label>
-            <input type="text" name="endereco" id="endereco"> <br>
+            <input type="text" name="endereco" id="endereco" name="endereco"> <br>
 
             <input type="submit" value="Salvar">
         </fieldset>
