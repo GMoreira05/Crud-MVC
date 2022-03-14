@@ -19,8 +19,8 @@ switch($uri_parse)
         PessoaController::save(); 
     break;
 
-    case '/pessoa/formulario':
-        include 'View/modules/Pessoa/CadastroPessoa.php';
+    case '/pessoa/form':
+        PessoaController::form();
     break;
     
     case '/formulario':

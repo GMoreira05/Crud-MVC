@@ -12,6 +12,10 @@
             $pessoa = new PessoaModel();
             $pessoa->nome = $_POST['nome'];
         }
+
+        public static function form(){
+            include 'View/modules/Pessoa/CadastroPessoa.php';
+        }
     }
 
 ?>
