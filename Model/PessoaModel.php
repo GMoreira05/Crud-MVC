@@ -6,6 +6,8 @@ class PessoaModel
     public $data_nascimento, $email;
     public $telefone, $endereco;
 
+    public $rows;
+
     public function save()
     {
         include 'DAO/PessoaDAO.php';
@@ -17,5 +19,13 @@ class PessoaModel
         } else {
             // update
         }
+    }
+
+    public function getAllRows(){
+        include 'DAO/PessoaDAO.php';
+
+        $dao = new PessoaDAO();
+
+        $this->rows = $dao->getAllRows();
     }
 }

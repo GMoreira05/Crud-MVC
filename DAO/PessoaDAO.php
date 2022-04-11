@@ -28,4 +28,13 @@ class PessoaDAO
         $stmt->bindValue(7, $model->endereco);
         $stmt->execute();      
     }
+
+    function getAllRows(){
+        $sql = "SELECT * FROM pessoa";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
 }
