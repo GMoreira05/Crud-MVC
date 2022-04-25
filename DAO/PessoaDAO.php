@@ -26,7 +26,7 @@ class PessoaDAO
         $stmt->bindValue(5, $model->email);
         $stmt->bindValue(6, $model->telefone);
         $stmt->bindValue(7, $model->endereco);
-        $stmt->execute();      
+        $stmt->execute();
     }
 
     function getAllRows(){
