@@ -1,6 +1,6 @@
 <?php
 
-class ProdutoDAO
+class CategoriaDAO
 {
     private $conexao;
 
@@ -12,21 +12,17 @@ class ProdutoDAO
         $this->conexao = new PDO($dsn, $user, $pass);
     }
 
-    function insert(ProdutoModel $model){
-        $sql = "INSERT INTO produtos 
-                (nome, valor, descricao, data_adicionado, id_categoria) VALUES (?, ?, ?, ?, ?)";
+    function insert(CategoriaModel $model){
+        $sql = "INSERT INTO categorias 
+                (nome) VALUES (?)";
         
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(2, $model->valor);
-        $stmt->bindValue(3, $model->descricao);
-        $stmt->bindValue(4, $model->data_adicionado);
-        $stmt->bindValue(5, $model->id_categoria);
         $stmt->execute();   
     }
 
     function getAllRows(){
-        $sql = "SELECT * FROM produtos";
+        $sql = "SELECT * FROM categorias";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();

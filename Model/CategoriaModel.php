@@ -1,16 +1,16 @@
 <?php
 
-class ProdutoModel
+class CategoriaModel
 {
-    public $id, $nome, $valor, $descricao, $data_adicionado, $id_categoria;
+    public $id, $nome;
 
     public $rows;
 
     public function save()
     {
-        include 'DAO/ProdutoDAO.php';
+        include 'DAO/CategoriaDAO.php';
 
-        $dao = new ProdutoDAO();
+        $dao = new CategoriaDAO();
 
         if($this->id == null) {
             $dao->insert($this);
@@ -20,9 +20,9 @@ class ProdutoModel
     }
 
     public function getAllRows(){
-        include 'DAO/ProdutoDAO.php';
+        include 'DAO/CategoriaDAO.php';
 
-        $dao = new ProdutoDAO();
+        $dao = new CategoriaDAO();
 
         $this->rows = $dao->getAllRows();
     }

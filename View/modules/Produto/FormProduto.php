@@ -30,6 +30,9 @@
             <label for="data_adicionado">Data de Adição:</label>
             <input name="data_adicionado" id="data_adicionado" type="date" />
 
+            <label for="id_categoria">ID Da Categoria:</label>
+            <input name="id_categoria" id="id_categoria" type="text" />
+
             <button type="submit">Enviar</button>
 
         </fieldset>

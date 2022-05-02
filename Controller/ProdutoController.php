@@ -37,6 +37,7 @@ class ProdutoController
         $produto->descricao = $_POST['descricao'];
         $produto->valor = $_POST['valor'];
         $produto->data_adicionado = $_POST['data_adicionado'];
+        $produto->id_categoria = $_POST['id_categoria'];
         $produto->save();
 
         echo 'Registro inserido com sucesso!';
