@@ -30,8 +30,12 @@
             <label for="data_adicionado">Data de Adição:</label>
             <input name="data_adicionado" id="data_adicionado" type="date" />
 
-            <label for="id_categoria">ID Da Categoria:</label>
-            <input name="id_categoria" id="id_categoria" type="text" />
+            <label for="id_categoria">Categoria:</label>
+            <select name="id_categoria" id="id_categoria">
+            <?php foreach ($model->rows as $item) : ?>
+                    <option value="<?= $item['id'] ?>"><?= $item['nome'] ?></option>
+            <?php endforeach ?>
+            </select>
 
             <button type="submit">Enviar</button>
 

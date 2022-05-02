@@ -20,7 +20,7 @@
                     <th>Descricao</th>
                     <th>Valor</th>
                     <th>Data Adicionado</th>
-                    <th>ID Categoria</th>
+                    <th>Categoria</th>
                 </tr>
             </thead>
 
@@ -31,7 +31,7 @@
                     <td><?= $item['descricao'] ?></td>
                     <td><?= $item['valor'] ?></td>
                     <td><?= $item['data_adicionado'] ?></td>
-                    <td><?= $item['id_categoria'] ?></td>
+                    <td><?= $item['categoria'] ?></td>
                 </tr>
             <?php endforeach ?>
         </table>

@@ -26,7 +26,7 @@ class ProdutoDAO
     }
 
     function getAllRows(){
-        $sql = "SELECT * FROM produtos";
+        $sql = "SELECT p.id, p.nome, p.valor, p.descricao, p.data_adicionado, c.nome categoria FROM produtos p JOIN categorias c ON c.id = p.id_categoria";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();

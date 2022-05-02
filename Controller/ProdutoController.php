@@ -22,6 +22,10 @@ class ProdutoController
      */
     public static function form()
     {
+        include 'Model/CategoriaModel.php';
+        $model = new CategoriaModel();
+        $model->getAllRows();
+
         include 'View/modules/Produto/FormProduto.php';
     }
 
