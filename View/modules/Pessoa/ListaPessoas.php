@@ -36,7 +36,10 @@
                         <td><?= $item['endereco'] ?></td>
                         <td><?= $item['email'] ?></td>
                         <td><?= $item['telefone'] ?></td>
-                        <td><a href="/pessoa/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Editar</a></td>
+                        <td>
+                            <a href="/pessoa/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Editar</a>
+                            <a href="/pessoa/excluir?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Excluir</a>
+                        </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>

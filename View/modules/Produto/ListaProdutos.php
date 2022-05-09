@@ -33,7 +33,10 @@
                         <td><?= $item['valor'] ?></td>
                         <td><?= $item['data_adicionado'] ?></td>
                         <td><?= $item['categoria'] ?></td>
-                        <td><a href="/produto/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Editar</a></td>
+                        <td>
+                            <a href="/produto/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Editar</a>
+                            <a href="/produto/excluir?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Excluir</a>
+                        </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>

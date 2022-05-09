@@ -17,6 +17,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
 
@@ -24,6 +25,10 @@
                 <tr>
                     <td><?= $item['id'] ?></td>
                     <td><?= $item['nome'] ?></td>
+                    <td>
+                        <a href="/categora/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Editar</a>
+                        <a href="/categoria/excluir?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Excluir</a>
+                    </td>
                 </tr>
             <?php endforeach ?>
         </table>
