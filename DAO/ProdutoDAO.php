@@ -25,6 +25,31 @@ class ProdutoDAO
         $stmt->execute();   
     }
 
+    public function selectById(int $id){
+        include_once 'Model/ProdutoModel.php';
+
+        $sql = "SELECT * FROM produtos WHERE id = ?";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt->fetchObject("ProdutoModel");
+    }
+
+    public function update(produtoModel $model){
+        $sql = "UPDATE produtos SET nome=?, valor=?, descricao=?, data_adicionado=?, id_categoria=? WHERE id=? ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $model->nome);
+        $stmt->bindValue(2, $model->valor);
+        $stmt->bindValue(3, $model->descricao);
+        $stmt->bindValue(4, $model->data_adicionado);
+        $stmt->bindValue(5, $model->id_categoria);
+        $stmt->bindValue(6, $model->id);
+        $stmt->execute();
+    }
+
     function getAllRows(){
         $sql = "SELECT p.id, p.nome, p.valor, p.descricao, p.data_adicionado, c.nome categoria FROM produtos p JOIN categorias c ON c.id = p.id_categoria";
 

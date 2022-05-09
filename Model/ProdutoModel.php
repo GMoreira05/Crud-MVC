@@ -15,7 +15,7 @@ class ProdutoModel
         if($this->id == null) {
             $dao->insert($this);
         } else {
-            // update
+            $dao->update($this);
         }
     }
 
@@ -25,5 +25,14 @@ class ProdutoModel
         $dao = new ProdutoDAO();
 
         $this->rows = $dao->getAllRows();
+    }
+
+    public function getById(int $id){
+        include 'DAO/ProdutoDAO.php';
+
+        $dao = new ProdutoDAO();
+        $obj = $dao->selectById($id);
+
+        return ($obj) ? $obj : new ProdutoModel();
     }
 }

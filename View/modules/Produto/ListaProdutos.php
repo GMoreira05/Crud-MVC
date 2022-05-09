@@ -21,19 +21,22 @@
                     <th>Valor</th>
                     <th>Data Adicionado</th>
                     <th>Categoria</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
-
-            <?php foreach ($model->rows as $item) : ?>
-                <tr>
-                    <td><?= $item['id'] ?></td>
-                    <td><?= $item['nome'] ?></td>
-                    <td><?= $item['descricao'] ?></td>
-                    <td><?= $item['valor'] ?></td>
-                    <td><?= $item['data_adicionado'] ?></td>
-                    <td><?= $item['categoria'] ?></td>
-                </tr>
-            <?php endforeach ?>
+            <tbody>
+                <?php foreach ($model->rows as $item) : ?>
+                    <tr>
+                        <td><?= $item['id'] ?></td>
+                        <td><?= $item['nome'] ?></td>
+                        <td><?= $item['descricao'] ?></td>
+                        <td><?= $item['valor'] ?></td>
+                        <td><?= $item['data_adicionado'] ?></td>
+                        <td><?= $item['categoria'] ?></td>
+                        <td><a href="/produto/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Editar</a></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
         </table>
     </div>
 </body>
