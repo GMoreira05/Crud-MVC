@@ -1,13 +1,7 @@
 <?php
 
-/**
- * Classe para determinar quais rotas...
- */
 class PessoaController 
 {
-    /**
-     * 
-     */
     public static function index() 
     {
         include 'Model/PessoaModel.php';
@@ -17,22 +11,23 @@ class PessoaController
         include 'View/modules/Pessoa/ListaPessoas.php';
     }
 
-    /**
-     * 
-     */
     public static function form()
     {
+        include 'Model/PessoaModel.php';
+        $model = new PessoaModel();
+
+        if(isset($_GET['id']))
+            $model = $model->getById( (int) $_GET['id']);
+
         include 'View/modules/Pessoa/FormPessoa.php';
     }
 
-    /**
-     * 
-     */
     public static function save() {
 
         include 'Model/PessoaModel.php';
 
         $pessoa = new PessoaModel();
+        $pessoa->id = $_POST['id'];
         $pessoa->nome = $_POST['nome'];
         $pessoa->rg = $_POST['rg'];
         $pessoa->cpf = $_POST['cpf'];
@@ -43,6 +38,6 @@ class PessoaController
 
         $pessoa->save();
 
-        echo 'Registro inserido com sucesso!';
+        header('Location: /pessoa');
     }
 }

@@ -14,10 +14,10 @@ class PessoaModel
 
         $dao = new PessoaDAO();
 
-        if($this->id == null) {
+        if(empty($this->id)) {
             $dao->insert($this);
         } else {
-            // update
+            $dao->update($this);
         }
     }
 
@@ -27,5 +27,14 @@ class PessoaModel
         $dao = new PessoaDAO();
 
         $this->rows = $dao->getAllRows();
+    }
+
+    public function getById(int $id){
+        include 'DAO/PessoaDAO.php';
+
+        $dao = new PessoaDAO();
+        $obj = $dao->selectById($id);
+
+        return ($obj) ? $obj : new PessoaModel();
     }
 }
