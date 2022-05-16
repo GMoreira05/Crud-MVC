@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Produtos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -34,8 +35,8 @@
                         <td><?= $item['data_adicionado'] ?></td>
                         <td><?= $item['categoria'] ?></td>
                         <td>
-                            <a href="/produto/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Editar</a>
-                            <a href="/produto/excluir?id=<?= $item['id'] ?>" class="waves-effect waves-light btn">Excluir</a>
+                            <a href="/produto/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="/produto/excluir?id=<?= $item['id'] ?>" class="waves-effect waves-light btn"><i class="fa-solid fa-trash-can"></i></a>
                         </td>
                     </tr>
                 <?php endforeach ?>
