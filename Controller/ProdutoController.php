@@ -51,6 +51,6 @@ class ProdutoController
         $produto->id_categoria = $_POST['id_categoria'];
         $produto->save();
 
-        echo 'Registro inserido com sucesso!';
+        header('location: /produto');
     }
 }

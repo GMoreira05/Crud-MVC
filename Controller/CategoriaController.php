@@ -36,6 +36,6 @@ class CategoriaController
         $categoria->nome = $_POST['nome'];
         $categoria->save();
 
-        echo 'Registro inserido com sucesso!';
+        header('location: /categoria');
     }
 }
