@@ -15,7 +15,7 @@ class CategoriaModel
         if($this->id == null) {
             $dao->insert($this);
         } else {
-            // update
+            $dao->update($this);
         }
     }
 
@@ -25,5 +25,14 @@ class CategoriaModel
         $dao = new CategoriaDAO();
 
         $this->rows = $dao->getAllRows();
+    }
+
+    public function getById(int $id){
+        include 'DAO/CategoriaDAO.php';
+
+        $dao = new CategoriaDAO();
+        $obj = $dao->selectById($id);
+
+        return ($obj) ? $obj : new CategoriaModel();
     }
 }

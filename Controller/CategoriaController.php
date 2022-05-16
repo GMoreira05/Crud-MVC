@@ -22,6 +22,12 @@ class CategoriaController
      */
     public static function form()
     {
+        include 'Model/CategoriaModel.php';
+        $model = new CategoriaModel();
+
+        if(isset($_GET['id']))
+            $model = $model->getById( (int) $_GET['id']);
+
         include 'View/modules/Categoria/FormCategoria.php';
     }
 
@@ -33,6 +39,7 @@ class CategoriaController
         include 'Model/CategoriaModel.php';
 
         $categoria = new CategoriaModel();
+        $categoria->id = $_POST['id'];
         $categoria->nome = $_POST['nome'];
         $categoria->save();
 

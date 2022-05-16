@@ -27,7 +27,7 @@
                     <td><?= $item['id'] ?></td>
                     <td><?= $item['nome'] ?></td>
                     <td>
-                        <a href="/categora/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="/categoria/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="/categoria/excluir?id=<?= $item['id'] ?>" class="waves-effect waves-light btn"><i class="fa-solid fa-trash-can"></i></a>
                     </td>
                 </tr>

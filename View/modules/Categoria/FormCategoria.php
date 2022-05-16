@@ -18,8 +18,9 @@
     <form action="/categoria/save" method="post">
         <fieldset>
             <legend>Cadastro de Categoria</legend>
+            <input type="hidden" id="id" name="id" value="<?= $model->id ?>">
             <label for="nome">Nome:</label>
-            <input name="nome" id="nome" type="text" />
+            <input name="nome" id="nome" type="text" value="<?= $model->nome ?>" />
 
             <button type="submit">Enviar</button>
 
