@@ -31,9 +31,6 @@ class CategoriaController
         include 'View/modules/Categoria/FormCategoria.php';
     }
 
-    /**
-     * 
-     */
     public static function save() {
 
         include 'Model/CategoriaModel.php';
@@ -44,5 +41,15 @@ class CategoriaController
         $categoria->save();
 
         header('location: /categoria');
+    }
+
+    public static function delete()
+    {
+        include 'Model/CategoriaModel.php';
+
+        $model = new CategoriaModel();
+        $model->delete( (int) $_GET['id'] );
+
+        header("Location: /categoria");
     }
 }

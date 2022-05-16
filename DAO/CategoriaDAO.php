@@ -50,4 +50,13 @@ class CategoriaDAO
         $stmt->bindValue(2, $model->id);
         $stmt->execute();
     }
+
+    public function delete(int $id)
+    {
+        $sql = "DELETE FROM categorias WHERE id = ? ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+    }
 }

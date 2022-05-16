@@ -40,4 +40,14 @@ class PessoaController
 
         header('Location: /pessoa');
     }
+
+    public static function delete()
+    {
+        include 'Model/PessoaModel.php';
+
+        $model = new PessoaModel();
+        $model->delete( (int) $_GET['id'] );
+
+        header("Location: /pessoa");
+    }
 }

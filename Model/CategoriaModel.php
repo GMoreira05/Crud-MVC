@@ -35,4 +35,12 @@ class CategoriaModel
 
         return ($obj) ? $obj : new CategoriaModel();
     }
+
+    public function delete(int $id)
+    {
+        include 'DAO/CategoriaDAO.php';
+
+        $dao = new CategoriaDAO();
+        $dao->delete($id);
+    }
 }

@@ -8,6 +8,7 @@ include 'Controller/CategoriaController.php';
 
 switch($uri_parse)
 {
+    //Rotas de Pessoa
     case '/pessoa':
         PessoaController::index();
     break;
@@ -20,6 +21,11 @@ switch($uri_parse)
         PessoaController::save();
     break;
 
+    case '/pessoa/excluir':
+        PessoaController::delete();
+    break;
+
+    //Rotas de Produto
     case '/produto':
         ProdutoController::index();
     break;
@@ -32,6 +38,11 @@ switch($uri_parse)
         ProdutoController::save();
     break;
 
+    case '/produto/excluir':
+        ProdutoController::delete();
+    break;
+
+    //Rotas de Categoria
     case '/categoria':
         CategoriaController::index();
     break;
@@ -42,6 +53,10 @@ switch($uri_parse)
 
     case '/categoria/save':
         CategoriaController::save();
+    break;
+
+    case '/categoria/excluir':
+        CategoriaController::delete();
     break;
 
     default:

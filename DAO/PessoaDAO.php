@@ -64,4 +64,13 @@ class PessoaDAO
         $stmt->bindValue(8, $model->id);
         $stmt->execute();
     }
+
+    public function delete(int $id)
+    {
+        $sql = "DELETE FROM pessoa WHERE id = ? ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+    }
 }

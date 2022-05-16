@@ -35,4 +35,12 @@ class ProdutoModel
 
         return ($obj) ? $obj : new ProdutoModel();
     }
+
+    public function delete(int $id)
+    {
+        include 'DAO/ProdutoDAO.php';
+
+        $dao = new ProdutoDAO();
+        $dao->delete($id);
+    }
 }
