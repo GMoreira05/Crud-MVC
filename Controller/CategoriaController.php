@@ -5,9 +5,6 @@
  */
 class CategoriaController 
 {
-    /**
-     * 
-     */
     public static function index() 
     {
         include 'Model/CategoriaModel.php';
@@ -17,9 +14,6 @@ class CategoriaController
         include 'View/modules/Categoria/ListaCategorias.php';
     }
 
-    /**
-     * 
-     */
     public static function form()
     {
         include 'Model/CategoriaModel.php';
