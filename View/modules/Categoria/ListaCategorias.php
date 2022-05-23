@@ -22,10 +22,11 @@
                 </tr>
             </thead>
 
+            <!-- Para cada objeto do tipo ITEM que está no parâmetro rows do model, vai fazer isso: -->
             <?php foreach ($model->rows as $item) : ?>
                 <tr>
-                    <td><?= $item['id'] ?></td>
-                    <td><?= $item['nome'] ?></td>
+                    <td><?= $item['id'] ?></td><!-- Coloca uma nova célula na tabela com o valor do ID -->
+                    <td><?= $item['nome'] ?></td><!-- Coloca uma nova célula na tabela com o valor do nome -->
                     <td>
                         <a href="/categoria/form?id=<?= $item['id'] ?>" class="waves-effect waves-light btn"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="/categoria/excluir?id=<?= $item['id'] ?>" class="waves-effect waves-light btn"><i class="fa-solid fa-trash-can"></i></a>

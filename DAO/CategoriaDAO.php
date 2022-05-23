@@ -1,62 +1,76 @@
 <?php
 
+/*
+*   A classe DAO é a que executa as querys do Banco de Dados
+*/
+
 class CategoriaDAO
 {
     private $conexao;
 
-    function __construct() {
-        $dsn = "mysql:host=localhost:3307;dbname=db_sistema";
-        $user = "root";
-        $pass = "etecjau";
+    function __construct() //Método construtor da classe. Sempre que essa classe é instanciada, vai ser executada essa função
+    { 
+        $dsn = "mysql:host=localhost:3307;dbname=db_sistema"; //dsn = data source name. Contém o host e o nome do BD
+        $user = "root"; //Usuário p/ acessar o banco de dados
+        $pass = "etecjau"; //Senha do usuário
         
-        $this->conexao = new PDO($dsn, $user, $pass);
+        $this->conexao = new PDO($dsn, $user, $pass); //Atributo conexao da DAO vai receber um novo objeto do tipo PDO
     }
 
-    function insert(CategoriaModel $model){
-        $sql = "INSERT INTO categorias 
-                (nome) VALUES (?)";
-        
-        $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $model->nome);
-        $stmt->execute();   
-    }
-
-    function getAllRows(){
-        $sql = "SELECT * FROM categorias";
-
-        $stmt = $this->conexao->prepare($sql);
-        $stmt->execute();
-
-        return $stmt->fetchAll();
-    }
-
-    public function selectById(int $id){
-        include_once 'Model/CategoriaModel.php';
-
-        $sql = "SELECT * FROM categorias WHERE id = ?";
-
-        $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $id);
-        $stmt->execute();
-
-        return $stmt->fetchObject("CategoriaModel");
-    }
-
-    public function update(CategoriaModel $model){
-        $sql = "UPDATE categorias SET nome=? WHERE id=? ";
-
-        $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(2, $model->id);
-        $stmt->execute();
-    }
-
-    public function delete(int $id)
+    function insert(CategoriaModel $model) //Função para inserir um Model
     {
-        $sql = "DELETE FROM categorias WHERE id = ? ";
+        $sql = "INSERT INTO categorias 
+                (nome) VALUES (?)"; //Código SQL que vai ser executado
+        
+        $stmt = $this->conexao->prepare($sql);
+
+        $stmt->bindValue(1, $model->nome); //"substitui" o primeiro "?" da query pelo nome que está armazenado no model. 
+                                           // O nome vai vir do form
+
+        $stmt->execute(); //Executa a query no BD
+    }
+
+    
+    function getAllRows() //Função para retornar todos os registros de categoria
+    {
+        $sql = "SELECT * FROM categorias"; //Código SQL que vai ser executado
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $id);
-        $stmt->execute();
+        $stmt->execute(); //Executa a query no BD
+
+        return $stmt->fetchAll(); //Quando o método é chamado, retorna todos os dados de quando executa a query
+    }
+
+    
+    public function selectById(int $id) //Função para selecionar os dados de um registro específico (pelo ID)
+    {
+        include_once 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
+
+        $sql = "SELECT * FROM categorias WHERE id = ?"; //Código SQL que vai ser executado
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id); //Troca o 1º ? pelo parâmetro ID da função
+        $stmt->execute(); //Executa a query
+
+        return $stmt->fetchObject("CategoriaModel"); //Constrói um objeto após executar a query e retorna ele
+    }
+
+    public function update(CategoriaModel $model) //Função para atualizar um registro, através do Model
+    {
+        $sql = "UPDATE categorias SET nome=? WHERE id=? "; //Código SQL que vai ser executado
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $model->nome); //Troca o 1º ? pelo atributo nome do parâmetro Model da função
+        $stmt->bindValue(2, $model->id); //Troca o 2º ? pelo atributo id do parâmetro Model da função
+        $stmt->execute(); //Executa a query
+    }
+    
+    public function delete(int $id) //Função para excluir um registro pelo ID
+    {
+        $sql = "DELETE FROM categorias WHERE id = ? "; //Código SQL que vai ser executado
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id); //Troca o 1º ? pelo parâmetro ID da função
+        $stmt->execute(); //Executa a query
     }
 }

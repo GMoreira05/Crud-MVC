@@ -18,9 +18,11 @@
     <form action="/categoria/save" method="post">
         <fieldset>
             <legend>Cadastro de Categoria</legend>
-            <input type="hidden" id="id" name="id" value="<?= $model->id ?>">
+            <input type="hidden" id="id" name="id" value="<?= $model->id ?>"> <!-- Input do tipo hidden só para não aparecer na tela -->
+            <!-- vai receber o id do model que é passado pela controller -->
             <label for="nome">Nome:</label>
             <input name="nome" id="nome" type="text" value="<?= $model->nome ?>" />
+            <!-- vai receber o nome do model que é passado pela controller -->
 
             <button type="submit">Enviar</button>
 

@@ -8,6 +8,14 @@ include 'Controller/CategoriaController.php';
 
 switch($uri_parse)
 {
+    /*
+    Estrutura:
+    Caso a rota seja "/pessoa"
+    O objeto PessoaControler vai executar a função "index()"
+    */
+
+    //Todos os outros comentários estão em todos os arquivos relacionados a Categoria
+
     //Rotas de Pessoa
     case '/pessoa':
         PessoaController::index();
