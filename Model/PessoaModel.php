@@ -10,7 +10,7 @@ class PessoaModel
 
     public function save()
     {
-        include 'DAO/PessoaDAO.php';
+        //include 'DAO/PessoaDAO.php';
 
         $dao = new PessoaDAO();
 
@@ -22,7 +22,7 @@ class PessoaModel
     }
 
     public function getAllRows(){
-        include 'DAO/PessoaDAO.php';
+        //include 'DAO/PessoaDAO.php';
 
         $dao = new PessoaDAO();
 
@@ -30,7 +30,7 @@ class PessoaModel
     }
 
     public function getById(int $id){
-        include 'DAO/PessoaDAO.php';
+        //include 'DAO/PessoaDAO.php';
 
         $dao = new PessoaDAO();
         $obj = $dao->selectById($id);
@@ -40,7 +40,7 @@ class PessoaModel
 
     public function delete(int $id)
     {
-        include 'DAO/PessoaDAO.php';
+        //include 'DAO/PessoaDAO.php';
 
         $dao = new PessoaDAO();
         $dao->delete($id);

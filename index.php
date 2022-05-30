@@ -2,9 +2,7 @@
 
 $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-include 'Controller/PessoaController.php';
-include 'Controller/ProdutoController.php';
-include 'Controller/CategoriaController.php';
+include 'autoload.php';
 
 switch($uri_parse)
 {

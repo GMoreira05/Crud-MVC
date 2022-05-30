@@ -39,7 +39,7 @@ class PessoaDAO
     }
 
     public function selectById(int $id){
-        include_once 'Model/PessoaModel.php';
+        //include_once 'Model/PessoaModel.php';
 
         $sql = "SELECT * FROM pessoa WHERE id = ?";
 

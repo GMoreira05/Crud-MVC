@@ -12,7 +12,7 @@ class CategoriaModel
     
     public function save() // Função de salvar
     {
-        include 'DAO/CategoriaDAO.php'; //Inclui o arquivo da classe CategoriaDAO para poder usar nessa parte do projeto
+        //include 'DAO/CategoriaDAO.php'; //Inclui o arquivo da classe CategoriaDAO para poder usar nessa parte do projeto
 
         $dao = new CategoriaDAO(); //Instancia um novo objeto DAO
 
@@ -25,7 +25,7 @@ class CategoriaModel
 
     public function getAllRows() //Função que retorna todos os registros do BD
     {
-        include 'DAO/CategoriaDAO.php'; //Inclui o arquivo da classe CategoriaDAO para poder usar nessa parte do projeto
+        //include 'DAO/CategoriaDAO.php'; //Inclui o arquivo da classe CategoriaDAO para poder usar nessa parte do projeto
 
         $dao = new CategoriaDAO(); //Instancia um novo objeto DAO
 
@@ -34,7 +34,7 @@ class CategoriaModel
 
     public function getById(int $id) //Função que retorna os dados de um registro específico do BD
     {
-        include 'DAO/CategoriaDAO.php'; //Inclui o arquivo da classe CategoriaDAO para poder usar nessa parte do projeto
+        //include 'DAO/CategoriaDAO.php'; //Inclui o arquivo da classe CategoriaDAO para poder usar nessa parte do projeto
 
         $dao = new CategoriaDAO(); //Instancia um novo objeto DAO
         $obj = $dao->selectById($id); //Parâmetro objeto vai receber os dados retornados pela função do DAO
@@ -45,7 +45,7 @@ class CategoriaModel
 
     public function delete(int $id) // Função para deletar um registro pelo ID
     {
-        include 'DAO/CategoriaDAO.php'; //Inclui o arquivo da classe CategoriaDAO para poder usar nessa parte do projeto
+        //include 'DAO/CategoriaDAO.php'; //Inclui o arquivo da classe CategoriaDAO para poder usar nessa parte do projeto
 
         $dao = new CategoriaDAO(); //Instancia um novo objeto DAO
         $dao->delete($id); //Executa a função de deletar do DAO, e passa o parâmetro ID da função do Model como parâmetro do DAO

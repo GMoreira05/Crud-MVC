@@ -10,7 +10,7 @@ class CategoriaController
     
     public static function index() //Função index é a função que é executada quando está na página principal (nesse caso, só lista todos os registros)
     {
-        include 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
+        //include 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
         $model = new CategoriaModel(); //Instancia um novo objeto do tipo CategoriaModel
         
         $model->getAllRows(); //Executa a função de pegar todos os registros do objeto model
@@ -21,7 +21,7 @@ class CategoriaController
     
     public static function form() //Função que exibe o formulário na tela
     {
-        include 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
+        //include 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
         $model = new CategoriaModel(); //Instancia um novo objeto do tipo CategoriaModel
 
         if(isset($_GET['id'])) //Se tiver um ID definido na rota (por ex: /categoria/form?id=1),
@@ -33,7 +33,7 @@ class CategoriaController
     
     public static function save() //Função para salvar um registro (pode ser inserir ou atualizar, vai ser o model que vai decidir isso)
     { 
-        include 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
+        //include 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
 
         $categoria = new CategoriaModel(); //Instancia um novo objeto do tipo CategoriaModel
         $categoria->id = $_POST['id']; //Atributo ID do objeto recebe o id que vir do formulário
@@ -45,7 +45,7 @@ class CategoriaController
 
     public static function delete() //Função para excluir um registro
     {
-        include 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
+        //include 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
 
         $model = new CategoriaModel(); //Instancia um novo objeto do tipo CategoriaModel
         $model->delete( (int) $_GET['id'] ); //Executa a função delete do model, passando o parâmetro ID

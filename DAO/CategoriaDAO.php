@@ -44,7 +44,7 @@ class CategoriaDAO
     
     public function selectById(int $id) //Função para selecionar os dados de um registro específico (pelo ID)
     {
-        include_once 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
+        //include_once 'Model/CategoriaModel.php'; //Inclui o arquivo da classe CategoriaModel para poder usar nessa parte do projeto
 
         $sql = "SELECT * FROM categorias WHERE id = ?"; //Código SQL que vai ser executado
 
