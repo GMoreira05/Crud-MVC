@@ -1,8 +1,7 @@
 <?php
 
-/*
-*   Transporta os dados da Controller para a DAO e da DAO para a Controller
-*/
+namespace App\Model;
+use App\DAO\CategoriaDAO;
 
 class CategoriaModel
 {

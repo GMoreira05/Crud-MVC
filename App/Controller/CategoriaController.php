@@ -1,9 +1,7 @@
 <?php
 
-/*
-*   A classe Controller é a que controla o que vai ser feito pelo site quando o usuário chama uma rota.
-*   Para cada página que for ser exibida, tem uma função na Controller.
-*/
+namespace App\Controller;
+use App\Model\CategoriaModel;
 
 class CategoriaController 
 {

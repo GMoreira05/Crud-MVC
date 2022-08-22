@@ -1,8 +1,8 @@
 <?php
 
-/*
-*   A classe DAO é a que executa as querys do Banco de Dados
-*/
+namespace App\DAO;
+use App\Model\CategoriaModel;
+use \PDO;
 
 class CategoriaDAO
 {

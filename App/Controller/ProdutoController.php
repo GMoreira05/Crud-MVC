@@ -1,8 +1,9 @@
 <?php
 
-/**
- * Classe para determinar quais rotas...
- */
+namespace App\Controller;
+use App\Model\ProdutoModel;
+use App\Model\CategoriaModel;
+
 class ProdutoController 
 {
     /**
