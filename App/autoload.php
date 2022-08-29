@@ -3,12 +3,12 @@
 spl_autoload_register(function ($nome_da_classe) 
 {
 
-    $arquivo_classe = dirname(__FILE__, 2) . '/' . $nome_da_classe . '.php';
+    $arquivo = BASEDIR . '/' . $nome_da_classe . '.php';
 
-    if(file_exists($arquivo_classe))
+    if(file_exists($arquivo))
     {
-        include $arquivo_classe;
+        include $arquivo;
     } else
-        echo "Arquivo não encontrado: " . $arquivo_classe;
+        echo "Arquivo não encontrado: " . $arquivo;
         
 });

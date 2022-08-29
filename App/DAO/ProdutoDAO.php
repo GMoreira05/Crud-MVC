@@ -9,9 +9,9 @@ class ProdutoDAO
     private $conexao;
 
     function __construct() {
-        $dsn = "mysql:host=localhost:3307;dbname=db_sistema";
-        $user = "root";
-        $pass = "etecjau";
+        $dsn = "mysql:host=" . $_ENV['db']['host'] . ";dbname=" . $_ENV['db']['database'];
+        $user = $_ENV['db']['user'];
+        $pass = $_ENV['db']['pass'];
         
         $this->conexao = new PDO($dsn, $user, $pass);
     }
@@ -38,7 +38,7 @@ class ProdutoDAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("ProdutoModel");
+        return $stmt->fetchObject("App\Model\ProdutoModel");
     }
 
     public function update(produtoModel $model){

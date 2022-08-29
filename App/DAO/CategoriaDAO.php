@@ -10,9 +10,9 @@ class CategoriaDAO
 
     function __construct() //Método construtor da classe. Sempre que essa classe é instanciada, vai ser executada essa função
     { 
-        $dsn = "mysql:host=localhost:3307;dbname=db_sistema"; //dsn = data source name. Contém o host e o nome do BD
-        $user = "root"; //Usuário p/ acessar o banco de dados
-        $pass = "etecjau"; //Senha do usuário
+        $dsn = "mysql:host=" . $_ENV['db']['host'] . ";dbname=" . $_ENV['db']['database']; //dsn = data source name. Contém o host e o nome do BD
+        $user = $_ENV['db']['user']; //Usuário p/ acessar o banco de dados
+        $pass = $_ENV['db']['pass']; //Senha do usuário
         
         $this->conexao = new PDO($dsn, $user, $pass); //Atributo conexao da DAO vai receber um novo objeto do tipo PDO
     }
@@ -52,7 +52,7 @@ class CategoriaDAO
         $stmt->bindValue(1, $id); //Troca o 1º ? pelo parâmetro ID da função
         $stmt->execute(); //Executa a query
 
-        return $stmt->fetchObject("CategoriaModel"); //Constrói um objeto após executar a query e retorna ele
+        return $stmt->fetchObject("App\Model\CategoriaModel"); //Constrói um objeto após executar a query e retorna ele
     }
 
     public function update(CategoriaModel $model) //Função para atualizar um registro, através do Model
