@@ -1,19 +1,14 @@
 <?php
 
 namespace App\DAO;
+
 use App\Model\PessoaModel;
 use \PDO;
 
-class PessoaDAO
+class PessoaDAO extends DAO
 {
-    private $conexao;
-
     function __construct() {
-        $dsn = "mysql:host=" . $_ENV['db']['host'] . ";dbname=" . $_ENV['db']['database'];
-        $user = $_ENV['db']['user'];
-        $pass = $_ENV['db']['pass'];
-        
-        $this->conexao = new PDO($dsn, $user, $pass);
+        parent::__construct();
     }
 
     function insert(PessoaModel $model) {
@@ -43,8 +38,6 @@ class PessoaDAO
     }
 
     public function selectById(int $id){
-        //include_once 'Model/PessoaModel.php';
-
         $sql = "SELECT * FROM pessoa WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
