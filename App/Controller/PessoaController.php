@@ -11,7 +11,7 @@ class PessoaController extends Controller
         $model = new PessoaModel();
         $model->getAllRows();
 
-        parent::render('Pessoa/ListaPessoas.php', $model);
+        parent::render('Pessoa/ListaPessoas', $model);
     }
 
     public static function form()
@@ -21,7 +21,7 @@ class PessoaController extends Controller
         if (isset($_GET['id']))
             $model = $model->getById((int) $_GET['id']);
 
-        parent::render('/Pessoa/FormPessoa.php', $model);
+        parent::render('/Pessoa/FormPessoa', $model);
     }
 
     public static function save()

@@ -11,6 +11,6 @@ abstract class Controller
         if(file_exists($arquivo_view))
             include $arquivo_view;
         else
-            exit('Arquivo "' . $view . '" não encontrado');
+            exit('Arquivo "' . $arquivo_view . '" não encontrado');
     }
 }
