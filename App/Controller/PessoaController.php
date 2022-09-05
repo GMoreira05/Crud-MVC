@@ -1,34 +1,31 @@
 <?php
 
 namespace App\Controller;
+
 use App\Model\PessoaModel;
 
-class PessoaController 
+class PessoaController extends Controller
 {
-    public static function index() 
+    public static function index()
     {
-        //include 'Model/PessoaModel.php';
         $model = new PessoaModel();
         $model->getAllRows();
 
-        include 'View/modules/Pessoa/ListaPessoas.php';
+        parent::render('Pessoa/ListaPessoas.php', $model);
     }
 
     public static function form()
     {
-        //include 'Model/PessoaModel.php';
         $model = new PessoaModel();
 
-        if(isset($_GET['id']))
-            $model = $model->getById( (int) $_GET['id']);
+        if (isset($_GET['id']))
+            $model = $model->getById((int) $_GET['id']);
 
-        include 'View/modules/Pessoa/FormPessoa.php';
+        parent::render('/Pessoa/FormPessoa.php', $model);
     }
 
-    public static function save() {
-
-        //include 'Model/PessoaModel.php';
-
+    public static function save()
+    {
         $pessoa = new PessoaModel();
         $pessoa->id = $_POST['id'];
         $pessoa->nome = $_POST['nome'];
@@ -46,10 +43,8 @@ class PessoaController
 
     public static function delete()
     {
-        //include 'Model/PessoaModel.php';
-
         $model = new PessoaModel();
-        $model->delete( (int) $_GET['id'] );
+        $model->delete((int) $_GET['id']);
 
         header("Location: /pessoa");
     }
