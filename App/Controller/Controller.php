@@ -8,9 +8,15 @@ abstract class Controller
     {
         $arquivo_view = VIEWS . $view . ".php";
 
-        if(file_exists($arquivo_view))
+        if (file_exists($arquivo_view))
             include $arquivo_view;
         else
             exit('Arquivo "' . $arquivo_view . '" não encontrado');
+    }
+
+    protected static function isAuthenticated()
+    {
+        if(!isset($_SESSION['usuario_logado']))
+            header('location: /login');
     }
 }

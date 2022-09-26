@@ -8,6 +8,8 @@ class PessoaController extends Controller
 {
     public static function index()
     {
+        parent::isAuthenticated();
+
         $model = new PessoaModel();
         $model->getAllRows();
 
@@ -16,6 +18,8 @@ class PessoaController extends Controller
 
     public static function form()
     {
+        parent::isAuthenticated();
+
         $model = new PessoaModel();
 
         if (isset($_GET['id']))
@@ -26,6 +30,8 @@ class PessoaController extends Controller
 
     public static function save()
     {
+        parent::isAuthenticated();
+
         $pessoa = new PessoaModel();
         $pessoa->id = $_POST['id'];
         $pessoa->nome = $_POST['nome'];
@@ -43,6 +49,8 @@ class PessoaController extends Controller
 
     public static function delete()
     {
+        parent::isAuthenticated();
+        
         $model = new PessoaModel();
         $model->delete((int) $_GET['id']);
 

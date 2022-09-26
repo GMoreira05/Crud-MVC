@@ -2,6 +2,8 @@
 
 $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+session_start();
+
 include 'config.php';
 include 'autoload.php';
 
@@ -9,6 +11,7 @@ use App\Controller\{
     PessoaController,
     ProdutoController,
     CategoriaController,
+    LoginController,
 };
 
 switch($uri_parse)
@@ -70,6 +73,18 @@ switch($uri_parse)
 
     case '/categoria/excluir':
         CategoriaController::delete();
+    break;
+
+    case '/login':
+        LoginController::index();
+    break;
+
+    case '/login/auth':
+        LoginController::auth();
+    break;
+
+    case '/login/logout':
+        LoginController::logout();
     break;
 
     default:
