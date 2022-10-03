@@ -1,16 +1,16 @@
 <?php
 
 namespace App\Controller;
+
 use App\Model\ProdutoModel;
 use App\Model\CategoriaModel;
 
-class ProdutoController 
+class ProdutoController extends Controller
 {
-    /**
-     * 
-     */
-    public static function index() 
+    public static function index()
     {
+        parent::isAuthenticated();
+
         //include 'Model/ProdutoModel.php';
         $model = new ProdutoModel();
         $model->getAllRows();
@@ -23,6 +23,8 @@ class ProdutoController
      */
     public static function form()
     {
+        parent::isAuthenticated();
+
         //include 'Model/CategoriaModel.php';
         $modelCategoria = new CategoriaModel();
         $modelCategoria->getAllRows();
@@ -30,8 +32,8 @@ class ProdutoController
         //include 'Model/ProdutoModel.php';
         $model = new ProdutoModel();
 
-        if(isset($_GET['id']))
-            $model = $model->getById( (int) $_GET['id']);
+        if (isset($_GET['id']))
+            $model = $model->getById((int) $_GET['id']);
 
         include 'View/modules/Produto/FormProduto.php';
     }
@@ -39,8 +41,9 @@ class ProdutoController
     /**
      * 
      */
-    public static function save() {
-
+    public static function save()
+    {
+        parent::isAuthenticated();
         //include 'Model/ProdutoModel.php';
 
         $produto = new ProdutoModel();
@@ -57,10 +60,11 @@ class ProdutoController
 
     public static function delete()
     {
+        parent::isAuthenticated();
         //include 'Model/ProdutoModel.php';
 
         $model = new ProdutoModel();
-        $model->delete( (int) $_GET['id'] );
+        $model->delete((int) $_GET['id']);
 
         header("Location: /produto");
     }
