@@ -1,3 +1,6 @@
+<?php if ($_GET['erro'] == true) {
+    echo 'Dados incorretos';
+} ?>
 <form action="/login/auth" method="POST">
     <label for="email">E-Mail:</label>
     <input type="email" name="email" id="email" />
