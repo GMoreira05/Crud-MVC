@@ -1,4 +1,4 @@
-<?php if ($_GET['erro'] == true) {
+<?php if (isset($_GET['erro'])) {
     echo 'Dados incorretos';
 } ?>
 <form action="/login/auth" method="POST">
